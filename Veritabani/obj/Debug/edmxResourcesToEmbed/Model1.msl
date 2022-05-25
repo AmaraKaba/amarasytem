@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Project_DataModelStoreContainer" CdmEntityContainer="Project_DataEntities">
+    <EntitySetMapping Name="C_Personel_Table">
+      <EntityTypeMapping TypeName="Project_DataModel.C_Personel_Table">
+        <MappingFragment StoreEntitySet="_Personel_Table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Hastane" ColumnName="Hastane" />
+          <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aile_bilgiler_Table">
+      <EntityTypeMapping TypeName="Project_DataModel.Aile_bilgiler_Table">
+        <MappingFragment StoreEntitySet="Aile_bilgiler_Table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BilgiEkle">
+      <EntityTypeMapping TypeName="Project_DataModel.BilgiEkle">
+        <MappingFragment StoreEntitySet="BilgiEkle">
+          <ScalarProperty Name="Menu_id" ColumnName="Menu_id" />
+          <ScalarProperty Name="Menu_ad" ColumnName="Menu_ad" />
+          <ScalarProperty Name="Menu_sira" ColumnName="Menu_sira" />
+          <ScalarProperty Name="Menu_yetki" ColumnName="Menu_yetki" />
+          <ScalarProperty Name="Menu_adres" ColumnName="Menu_adres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cinsiyet_Table">
+      <EntityTypeMapping TypeName="Project_DataModel.Cinsiyet_Table">
+        <MappingFragment StoreEntitySet="Cinsiyet_Table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cocuk_Table">
+      <EntityTypeMapping TypeName="Project_DataModel.Cocuk_Table">
+        <MappingFragment StoreEntitySet="Cocuk_Table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="Hastane" ColumnName="Hastane" />
+          <ScalarProperty Name="Dogum_tarihi" ColumnName="Dogum_tarihi" />
+          <ScalarProperty Name="Dogum_Saat" ColumnName="Dogum_Saat" />
+          <ScalarProperty Name="Sehir" ColumnName="Sehir" />
+          <ScalarProperty Name="Giris_Personel" ColumnName="Giris_Personel" />
+          <ScalarProperty Name="Anne_ID" ColumnName="Anne_ID" />
+          <ScalarProperty Name="Baba_ID" ColumnName="Baba_ID" />
+          <ScalarProperty Name="Cocuk_Sırası" ColumnName="Cocuk_Sırası" />
+          <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Devlet_memur_Table">
+      <EntityTypeMapping TypeName="Project_DataModel.Devlet_memur_Table">
+        <MappingFragment StoreEntitySet="Devlet_memur_Table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="Sube" ColumnName="Sube" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hastane_Table">
+      <EntityTypeMapping TypeName="Project_DataModel.Hastane_Table">
+        <MappingFragment StoreEntitySet="Hastane_Table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Hastane_Ad" ColumnName="Hastane_Ad" />
+          <ScalarProperty Name="Sehir" ColumnName="Sehir" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="islem_Table">
+      <EntityTypeMapping TypeName="Project_DataModel.islem_Table">
+        <MappingFragment StoreEntitySet="islem_Table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Turu" ColumnName="Turu" />
+          <ScalarProperty Name="Yapan_Kisi" ColumnName="Yapan_Kisi" />
+          <ScalarProperty Name="Alan_kisi" ColumnName="Alan_kisi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="islem_turu_Table">
+      <EntityTypeMapping TypeName="Project_DataModel.islem_turu_Table">
+        <MappingFragment StoreEntitySet="islem_turu_Table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Turu" ColumnName="Turu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanici_Table">
+      <EntityTypeMapping TypeName="Project_DataModel.Kullanici_Table">
+        <MappingFragment StoreEntitySet="Kullanici_Table">
+          <ScalarProperty Name="Kullanici_id" ColumnName="Kullanici_id" />
+          <ScalarProperty Name="Kullanici_ad" ColumnName="Kullanici_ad" />
+          <ScalarProperty Name="Kullanici_email" ColumnName="Kullanici_email" />
+          <ScalarProperty Name="Kullanici_TC" ColumnName="Kullanici_TC" />
+          <ScalarProperty Name="Kullanici_sifresi" ColumnName="Kullanici_sifresi" />
+          <ScalarProperty Name="Kullanici_Yetki" ColumnName="Kullanici_Yetki" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sehir_Table">
+      <EntityTypeMapping TypeName="Project_DataModel.Sehir_Table">
+        <MappingFragment StoreEntitySet="Sehir_Table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Sehir" ColumnName="Sehir" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sube_Table">
+      <EntityTypeMapping TypeName="Project_DataModel.Sube_Table">
+        <MappingFragment StoreEntitySet="Sube_Table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Sehir" ColumnName="Sehir" />
+          <ScalarProperty Name="Sube_Ad" ColumnName="Sube_Ad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Project_DataModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

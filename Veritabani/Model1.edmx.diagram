@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cc5fc34a9bc9435cbd5be14f3ab18e35" Name="Diagram1">
+        <EntityTypeShape EntityType="Project_DataModel.C_Personel_Table" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DataModel.Aile_bilgiler_Table" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DataModel.BilgiEkle" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DataModel.Cinsiyet_Table" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DataModel.Cocuk_Table" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DataModel.Devlet_memur_Table" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DataModel.Hastane_Table" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DataModel.islem_Table" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DataModel.islem_turu_Table" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DataModel.Kullanici_Table" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DataModel.Sehir_Table" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DataModel.Sube_Table" Width="1.5" PointX="3.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Project_DataModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="Project_DataModel.FK__Personel_Table_Cinsiyet_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK__Personel_Table_Hastane_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK_Cocuk_Table__Personel_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK_Aile_bilgiler_Table_Cinsiyet_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK_Cocuk_Table_Aile_bilgiler_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK_Cocuk_Table_Aile_bilgiler_Table1" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK_islem_Table_Aile_bilgiler_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK_Cocuk_Table_Cinsiyet_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK_Devlet_memur_Table_Cinsiyet_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK_Cocuk_Table_Hastane_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK_Cocuk_Table_Sehir_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK_Devlet_memur_Table_Sube_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK_islem_Table_Devlet_memur_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK_Hastane_Table_Sehir_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK_islem_Table_islem_turu_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="Project_DataModel.FK_Sube_Table_Sehir_Table" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

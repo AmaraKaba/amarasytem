@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Project_DataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C_Personel_Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TC" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Hastane" Type="Int32" />
+    <Property Name="Cinsiyet" Type="Int32" />
+    <NavigationProperty Name="Cinsiyet_Table" Relationship="Self.FK__Personel_Table_Cinsiyet_Table" FromRole="C_Personel_Table" ToRole="Cinsiyet_Table" />
+    <NavigationProperty Name="Hastane_Table" Relationship="Self.FK__Personel_Table_Hastane_Table" FromRole="C_Personel_Table" ToRole="Hastane_Table" />
+    <NavigationProperty Name="Cocuk_Table" Relationship="Self.FK_Cocuk_Table__Personel_Table" FromRole="C_Personel_Table" ToRole="Cocuk_Table" />
+  </EntityType>
+  <EntityType Name="Aile_bilgiler_Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cinsiyet" Type="Int32" />
+    <NavigationProperty Name="Cinsiyet_Table" Relationship="Self.FK_Aile_bilgiler_Table_Cinsiyet_Table" FromRole="Aile_bilgiler_Table" ToRole="Cinsiyet_Table" />
+    <NavigationProperty Name="Cocuk_Table" Relationship="Self.FK_Cocuk_Table_Aile_bilgiler_Table" FromRole="Aile_bilgiler_Table" ToRole="Cocuk_Table" />
+    <NavigationProperty Name="Cocuk_Table1" Relationship="Self.FK_Cocuk_Table_Aile_bilgiler_Table1" FromRole="Aile_bilgiler_Table" ToRole="Cocuk_Table" />
+    <NavigationProperty Name="islem_Table" Relationship="Self.FK_islem_Table_Aile_bilgiler_Table" FromRole="Aile_bilgiler_Table" ToRole="islem_Table" />
+  </EntityType>
+  <EntityType Name="BilgiEkle">
+    <Key>
+      <PropertyRef Name="Menu_id" />
+    </Key>
+    <Property Name="Menu_id" Type="Int32" Nullable="false" />
+    <Property Name="Menu_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Menu_sira" Type="Int32" />
+    <Property Name="Menu_yetki" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Menu_adres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Cinsiyet_Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Cinsiyet" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="C_Personel_Table" Relationship="Self.FK__Personel_Table_Cinsiyet_Table" FromRole="Cinsiyet_Table" ToRole="C_Personel_Table" />
+    <NavigationProperty Name="Aile_bilgiler_Table" Relationship="Self.FK_Aile_bilgiler_Table_Cinsiyet_Table" FromRole="Cinsiyet_Table" ToRole="Aile_bilgiler_Table" />
+    <NavigationProperty Name="Cocuk_Table" Relationship="Self.FK_Cocuk_Table_Cinsiyet_Table" FromRole="Cinsiyet_Table" ToRole="Cocuk_Table" />
+    <NavigationProperty Name="Devlet_memur_Table" Relationship="Self.FK_Devlet_memur_Table_Cinsiyet_Table" FromRole="Cinsiyet_Table" ToRole="Devlet_memur_Table" />
+  </EntityType>
+  <EntityType Name="Cocuk_Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Hastane" Type="Int32" />
+    <Property Name="Dogum_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="Dogum_Saat" Type="Time" Precision="7" />
+    <Property Name="Sehir" Type="Int32" />
+    <Property Name="Giris_Personel" Type="Int32" />
+    <Property Name="Anne_ID" Type="Int32" />
+    <Property Name="Baba_ID" Type="Int32" />
+    <Property Name="Cocuk_Sırası" Type="Int32" />
+    <Property Name="Cinsiyet" Type="Int32" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="C_Personel_Table" Relationship="Self.FK_Cocuk_Table__Personel_Table" FromRole="Cocuk_Table" ToRole="C_Personel_Table" />
+    <NavigationProperty Name="Aile_bilgiler_Table" Relationship="Self.FK_Cocuk_Table_Aile_bilgiler_Table" FromRole="Cocuk_Table" ToRole="Aile_bilgiler_Table" />
+    <NavigationProperty Name="Aile_bilgiler_Table1" Relationship="Self.FK_Cocuk_Table_Aile_bilgiler_Table1" FromRole="Cocuk_Table" ToRole="Aile_bilgiler_Table" />
+    <NavigationProperty Name="Cinsiyet_Table" Relationship="Self.FK_Cocuk_Table_Cinsiyet_Table" FromRole="Cocuk_Table" ToRole="Cinsiyet_Table" />
+    <NavigationProperty Name="Hastane_Table" Relationship="Self.FK_Cocuk_Table_Hastane_Table" FromRole="Cocuk_Table" ToRole="Hastane_Table" />
+    <NavigationProperty Name="Sehir_Table" Relationship="Self.FK_Cocuk_Table_Sehir_Table" FromRole="Cocuk_Table" ToRole="Sehir_Table" />
+  </EntityType>
+  <EntityType Name="Devlet_memur_Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cinsiyet" Type="Int32" />
+    <Property Name="TC" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="Sube" Type="Int32" />
+    <Property Name="Telefon" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="E_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cinsiyet_Table" Relationship="Self.FK_Devlet_memur_Table_Cinsiyet_Table" FromRole="Devlet_memur_Table" ToRole="Cinsiyet_Table" />
+    <NavigationProperty Name="Sube_Table" Relationship="Self.FK_Devlet_memur_Table_Sube_Table" FromRole="Devlet_memur_Table" ToRole="Sube_Table" />
+    <NavigationProperty Name="islem_Table" Relationship="Self.FK_islem_Table_Devlet_memur_Table" FromRole="Devlet_memur_Table" ToRole="islem_Table" />
+  </EntityType>
+  <EntityType Name="Hastane_Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Hastane_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sehir" Type="Int32" />
+    <NavigationProperty Name="C_Personel_Table" Relationship="Self.FK__Personel_Table_Hastane_Table" FromRole="Hastane_Table" ToRole="C_Personel_Table" />
+    <NavigationProperty Name="Cocuk_Table" Relationship="Self.FK_Cocuk_Table_Hastane_Table" FromRole="Hastane_Table" ToRole="Cocuk_Table" />
+    <NavigationProperty Name="Sehir_Table" Relationship="Self.FK_Hastane_Table_Sehir_Table" FromRole="Hastane_Table" ToRole="Sehir_Table" />
+  </EntityType>
+  <EntityType Name="islem_Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Turu" Type="Int32" />
+    <Property Name="Yapan_Kisi" Type="Int32" />
+    <Property Name="Alan_kisi" Type="Int32" />
+    <NavigationProperty Name="Aile_bilgiler_Table" Relationship="Self.FK_islem_Table_Aile_bilgiler_Table" FromRole="islem_Table" ToRole="Aile_bilgiler_Table" />
+    <NavigationProperty Name="Devlet_memur_Table" Relationship="Self.FK_islem_Table_Devlet_memur_Table" FromRole="islem_Table" ToRole="Devlet_memur_Table" />
+    <NavigationProperty Name="islem_turu_Table" Relationship="Self.FK_islem_Table_islem_turu_Table" FromRole="islem_Table" ToRole="islem_turu_Table" />
+  </EntityType>
+  <EntityType Name="islem_turu_Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Turu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="islem_Table" Relationship="Self.FK_islem_Table_islem_turu_Table" FromRole="islem_turu_Table" ToRole="islem_Table" />
+  </EntityType>
+  <EntityType Name="Kullanici_Table">
+    <Key>
+      <PropertyRef Name="Kullanici_id" />
+    </Key>
+    <Property Name="Kullanici_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kullanici_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kullanici_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kullanici_TC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kullanici_sifresi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Kullanici_Yetki" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Sehir_Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Sehir" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cocuk_Table" Relationship="Self.FK_Cocuk_Table_Sehir_Table" FromRole="Sehir_Table" ToRole="Cocuk_Table" />
+    <NavigationProperty Name="Hastane_Table" Relationship="Self.FK_Hastane_Table_Sehir_Table" FromRole="Sehir_Table" ToRole="Hastane_Table" />
+    <NavigationProperty Name="Sube_Table" Relationship="Self.FK_Sube_Table_Sehir_Table" FromRole="Sehir_Table" ToRole="Sube_Table" />
+  </EntityType>
+  <EntityType Name="Sube_Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Sehir" Type="Int32" />
+    <Property Name="Sube_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Devlet_memur_Table" Relationship="Self.FK_Devlet_memur_Table_Sube_Table" FromRole="Sube_Table" ToRole="Devlet_memur_Table" />
+    <NavigationProperty Name="Sehir_Table" Relationship="Self.FK_Sube_Table_Sehir_Table" FromRole="Sube_Table" ToRole="Sehir_Table" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK__Personel_Table_Cinsiyet_Table">
+    <End Role="Cinsiyet_Table" Type="Self.Cinsiyet_Table" Multiplicity="0..1" />
+    <End Role="C_Personel_Table" Type="Self.C_Personel_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cinsiyet_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="C_Personel_Table">
+        <PropertyRef Name="Cinsiyet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Personel_Table_Hastane_Table">
+    <End Role="Hastane_Table" Type="Self.Hastane_Table" Multiplicity="0..1" />
+    <End Role="C_Personel_Table" Type="Self.C_Personel_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hastane_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="C_Personel_Table">
+        <PropertyRef Name="Hastane" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cocuk_Table__Personel_Table">
+    <End Role="C_Personel_Table" Type="Self.C_Personel_Table" Multiplicity="0..1" />
+    <End Role="Cocuk_Table" Type="Self.Cocuk_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="C_Personel_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Cocuk_Table">
+        <PropertyRef Name="Giris_Personel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aile_bilgiler_Table_Cinsiyet_Table">
+    <End Role="Cinsiyet_Table" Type="Self.Cinsiyet_Table" Multiplicity="0..1" />
+    <End Role="Aile_bilgiler_Table" Type="Self.Aile_bilgiler_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cinsiyet_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Aile_bilgiler_Table">
+        <PropertyRef Name="Cinsiyet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cocuk_Table_Aile_bilgiler_Table">
+    <End Role="Aile_bilgiler_Table" Type="Self.Aile_bilgiler_Table" Multiplicity="0..1" />
+    <End Role="Cocuk_Table" Type="Self.Cocuk_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aile_bilgiler_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Cocuk_Table">
+        <PropertyRef Name="Anne_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cocuk_Table_Aile_bilgiler_Table1">
+    <End Role="Aile_bilgiler_Table" Type="Self.Aile_bilgiler_Table" Multiplicity="0..1" />
+    <End Role="Cocuk_Table" Type="Self.Cocuk_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aile_bilgiler_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Cocuk_Table">
+        <PropertyRef Name="Baba_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_islem_Table_Aile_bilgiler_Table">
+    <End Role="Aile_bilgiler_Table" Type="Self.Aile_bilgiler_Table" Multiplicity="0..1" />
+    <End Role="islem_Table" Type="Self.islem_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aile_bilgiler_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="islem_Table">
+        <PropertyRef Name="Alan_kisi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cocuk_Table_Cinsiyet_Table">
+    <End Role="Cinsiyet_Table" Type="Self.Cinsiyet_Table" Multiplicity="0..1" />
+    <End Role="Cocuk_Table" Type="Self.Cocuk_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cinsiyet_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Cocuk_Table">
+        <PropertyRef Name="Cinsiyet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Devlet_memur_Table_Cinsiyet_Table">
+    <End Role="Cinsiyet_Table" Type="Self.Cinsiyet_Table" Multiplicity="0..1" />
+    <End Role="Devlet_memur_Table" Type="Self.Devlet_memur_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cinsiyet_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Devlet_memur_Table">
+        <PropertyRef Name="Cinsiyet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cocuk_Table_Hastane_Table">
+    <End Role="Hastane_Table" Type="Self.Hastane_Table" Multiplicity="0..1" />
+    <End Role="Cocuk_Table" Type="Self.Cocuk_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hastane_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Cocuk_Table">
+        <PropertyRef Name="Hastane" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cocuk_Table_Sehir_Table">
+    <End Role="Sehir_Table" Type="Self.Sehir_Table" Multiplicity="0..1" />
+    <End Role="Cocuk_Table" Type="Self.Cocuk_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sehir_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Cocuk_Table">
+        <PropertyRef Name="Sehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Devlet_memur_Table_Sube_Table">
+    <End Role="Sube_Table" Type="Self.Sube_Table" Multiplicity="0..1" />
+    <End Role="Devlet_memur_Table" Type="Self.Devlet_memur_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sube_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Devlet_memur_Table">
+        <PropertyRef Name="Sube" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_islem_Table_Devlet_memur_Table">
+    <End Role="Devlet_memur_Table" Type="Self.Devlet_memur_Table" Multiplicity="0..1" />
+    <End Role="islem_Table" Type="Self.islem_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devlet_memur_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="islem_Table">
+        <PropertyRef Name="Yapan_Kisi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hastane_Table_Sehir_Table">
+    <End Role="Sehir_Table" Type="Self.Sehir_Table" Multiplicity="0..1" />
+    <End Role="Hastane_Table" Type="Self.Hastane_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sehir_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Hastane_Table">
+        <PropertyRef Name="Sehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_islem_Table_islem_turu_Table">
+    <End Role="islem_turu_Table" Type="Self.islem_turu_Table" Multiplicity="0..1" />
+    <End Role="islem_Table" Type="Self.islem_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="islem_turu_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="islem_Table">
+        <PropertyRef Name="Turu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sube_Table_Sehir_Table">
+    <End Role="Sehir_Table" Type="Self.Sehir_Table" Multiplicity="0..1" />
+    <End Role="Sube_Table" Type="Self.Sube_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sehir_Table">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Sube_Table">
+        <PropertyRef Name="Sehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Project_DataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C_Personel_Table" EntityType="Self.C_Personel_Table" />
+    <EntitySet Name="Aile_bilgiler_Table" EntityType="Self.Aile_bilgiler_Table" />
+    <EntitySet Name="BilgiEkle" EntityType="Self.BilgiEkle" />
+    <EntitySet Name="Cinsiyet_Table" EntityType="Self.Cinsiyet_Table" />
+    <EntitySet Name="Cocuk_Table" EntityType="Self.Cocuk_Table" />
+    <EntitySet Name="Devlet_memur_Table" EntityType="Self.Devlet_memur_Table" />
+    <EntitySet Name="Hastane_Table" EntityType="Self.Hastane_Table" />
+    <EntitySet Name="islem_Table" EntityType="Self.islem_Table" />
+    <EntitySet Name="islem_turu_Table" EntityType="Self.islem_turu_Table" />
+    <EntitySet Name="Kullanici_Table" EntityType="Self.Kullanici_Table" />
+    <EntitySet Name="Sehir_Table" EntityType="Self.Sehir_Table" />
+    <EntitySet Name="Sube_Table" EntityType="Self.Sube_Table" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK__Personel_Table_Cinsiyet_Table" Association="Self.FK__Personel_Table_Cinsiyet_Table">
+      <End Role="Cinsiyet_Table" EntitySet="Cinsiyet_Table" />
+      <End Role="C_Personel_Table" EntitySet="C_Personel_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Personel_Table_Hastane_Table" Association="Self.FK__Personel_Table_Hastane_Table">
+      <End Role="Hastane_Table" EntitySet="Hastane_Table" />
+      <End Role="C_Personel_Table" EntitySet="C_Personel_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cocuk_Table__Personel_Table" Association="Self.FK_Cocuk_Table__Personel_Table">
+      <End Role="C_Personel_Table" EntitySet="C_Personel_Table" />
+      <End Role="Cocuk_Table" EntitySet="Cocuk_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aile_bilgiler_Table_Cinsiyet_Table" Association="Self.FK_Aile_bilgiler_Table_Cinsiyet_Table">
+      <End Role="Cinsiyet_Table" EntitySet="Cinsiyet_Table" />
+      <End Role="Aile_bilgiler_Table" EntitySet="Aile_bilgiler_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cocuk_Table_Aile_bilgiler_Table" Association="Self.FK_Cocuk_Table_Aile_bilgiler_Table">
+      <End Role="Aile_bilgiler_Table" EntitySet="Aile_bilgiler_Table" />
+      <End Role="Cocuk_Table" EntitySet="Cocuk_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cocuk_Table_Aile_bilgiler_Table1" Association="Self.FK_Cocuk_Table_Aile_bilgiler_Table1">
+      <End Role="Aile_bilgiler_Table" EntitySet="Aile_bilgiler_Table" />
+      <End Role="Cocuk_Table" EntitySet="Cocuk_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_islem_Table_Aile_bilgiler_Table" Association="Self.FK_islem_Table_Aile_bilgiler_Table">
+      <End Role="Aile_bilgiler_Table" EntitySet="Aile_bilgiler_Table" />
+      <End Role="islem_Table" EntitySet="islem_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cocuk_Table_Cinsiyet_Table" Association="Self.FK_Cocuk_Table_Cinsiyet_Table">
+      <End Role="Cinsiyet_Table" EntitySet="Cinsiyet_Table" />
+      <End Role="Cocuk_Table" EntitySet="Cocuk_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Devlet_memur_Table_Cinsiyet_Table" Association="Self.FK_Devlet_memur_Table_Cinsiyet_Table">
+      <End Role="Cinsiyet_Table" EntitySet="Cinsiyet_Table" />
+      <End Role="Devlet_memur_Table" EntitySet="Devlet_memur_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cocuk_Table_Hastane_Table" Association="Self.FK_Cocuk_Table_Hastane_Table">
+      <End Role="Hastane_Table" EntitySet="Hastane_Table" />
+      <End Role="Cocuk_Table" EntitySet="Cocuk_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cocuk_Table_Sehir_Table" Association="Self.FK_Cocuk_Table_Sehir_Table">
+      <End Role="Sehir_Table" EntitySet="Sehir_Table" />
+      <End Role="Cocuk_Table" EntitySet="Cocuk_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Devlet_memur_Table_Sube_Table" Association="Self.FK_Devlet_memur_Table_Sube_Table">
+      <End Role="Sube_Table" EntitySet="Sube_Table" />
+      <End Role="Devlet_memur_Table" EntitySet="Devlet_memur_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_islem_Table_Devlet_memur_Table" Association="Self.FK_islem_Table_Devlet_memur_Table">
+      <End Role="Devlet_memur_Table" EntitySet="Devlet_memur_Table" />
+      <End Role="islem_Table" EntitySet="islem_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hastane_Table_Sehir_Table" Association="Self.FK_Hastane_Table_Sehir_Table">
+      <End Role="Sehir_Table" EntitySet="Sehir_Table" />
+      <End Role="Hastane_Table" EntitySet="Hastane_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_islem_Table_islem_turu_Table" Association="Self.FK_islem_Table_islem_turu_Table">
+      <End Role="islem_turu_Table" EntitySet="islem_turu_Table" />
+      <End Role="islem_Table" EntitySet="islem_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sube_Table_Sehir_Table" Association="Self.FK_Sube_Table_Sehir_Table">
+      <End Role="Sehir_Table" EntitySet="Sehir_Table" />
+      <End Role="Sube_Table" EntitySet="Sube_Table" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
