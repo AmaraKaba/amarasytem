@@ -1,0 +1,15 @@
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\bin\Debug\Siniflarim.dll.config
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\bin\Debug\Siniflarim.dll
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\bin\Debug\Siniflarim.pdb
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\bin\Debug\EntityFramework.dll
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\bin\Debug\Veritabani.dll
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\bin\Debug\Veritabani.pdb
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\bin\Debug\Veritabani.dll.config
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\bin\Debug\EntityFramework.xml
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\obj\Debug\Siniflarim.csproj.AssemblyReference.cache
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\obj\Debug\Siniflarim.csproj.CoreCompileInputs.cache
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\obj\Debug\Siniflarim.csproj.CopyComplete
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\obj\Debug\Siniflarim.dll
+C:\Users\AMARA KABA\Downloads\web_proje_Ak\Siniflarim\obj\Debug\Siniflarim.pdb
